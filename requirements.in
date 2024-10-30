@@ -3,3 +3,5 @@ pyTelegramBotAPI
 telethon
 jinja2
 pytz
+python-dotenv
+aiohttp
