@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="static/css/style2.css">
+
+</head>
+<body>
+    <p>🎉 ¡Bienvenido/a {{ first_name }} {{ last_name }}!</p>
+    <p>Al grupo {{ nombre_del_grupo }}</p>
+    <p>Nos alegra tenerte aquí</p>
+    <p></p>
+    <h1>۞ <strong><span class="resaltado">Datos</span></strong></h1>
+    <p>∫ <strong><span class="resaltado">ID:</span></strong> {{ id }}</p>
+    <p>∫ <strong><span class="resaltado">First Name:</span></strong> {{ first_name }}</p>
+    
+    <!-- Mostrar username o crear enlace -->
+    <p>∫ <strong><span class="resaltado">Username:</span></strong> 
+        {% if username %}
+            {{ username }}
+        {% else %}
+            <a href="https://t.me/{{ first_name | lower | replace(' ', '_') }}">{{ first_name | lower | replace(' ', '_') }}</a>
+        {% endif %}
+    </p>
+    <p> </p>
+    <p>📝 "{{ frase }}"</p>
+    <p><strong><span class="resaltado">Hora:</span></strong> {{ hora_GTM }}</p>
+    <p><strong><span class="resaltado">Fecha:</span></strong> {{ Fecha_GTM }}</p>
+</body>
+</html>

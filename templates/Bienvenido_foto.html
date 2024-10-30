@@ -1,0 +1,170 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Interfaz Cyberpunk HUD</title>
+    <!-- Incluimos el CSS directamente en el HTML -->
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        body {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+            background: #1a0033;
+            color: #00ffff;
+            font-family: 'Courier New', Courier, monospace;
+            overflow: hidden;
+            font-size: 1.5em;
+        }
+        body::before {
+            content: "";
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: radial-gradient(circle at center, rgba(18, 18, 48, 0.8), #01010a);
+            background-blend-mode: overlay;
+            z-index: -1;
+        }
+        .shell-container {
+            display: flex;
+            flex-direction: column;
+            border: 2px solid #00ffff;
+            padding: 20px;
+            border-radius: 10px;
+            width: 80%;
+            max-width: 1000px;
+            box-shadow: 0 0 20px rgba(0, 255, 255, 0.5);
+            background: rgba(10, 10, 30, 0.9);
+            position: relative;
+            animation: pulse 2s infinite;
+            transform: scale(1.2);
+        }
+        @keyframes pulse {
+            0% { box-shadow: 0 0 20px rgba(0, 255, 255, 0.3); }
+            50% { box-shadow: 0 0 30px rgba(0, 255, 255, 0.6); }
+            100% { box-shadow: 0 0 20px rgba(0, 255, 255, 0.3); }
+        }
+        .profile-pic {
+            width: 140px;
+            height: 140px;
+            border-radius: 50%;
+            border: 2px solid #ff00ff;
+            background-size: cover;
+            box-shadow: 0 0 10px rgba(255, 0, 255, 0.8);
+            margin-bottom: 10px;
+        }
+        .profile-container {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            margin-bottom: 20px;
+        }
+        .profile-container h1 {
+            font-size: 1.8em;
+            color: #00ffff;
+            text-shadow: 0 0 5px #00ffff;
+            margin-bottom: 5px;
+        }
+        .profile-container h2 {
+            font-size: 1.5em;
+            color: #00ffff;
+            text-shadow: 0 0 3px #00ffff;
+        }
+        .info-container {
+            display: flex;
+            justify-content: space-between;
+            flex: 1;
+            margin-bottom: 20px;
+        }
+        .info-box {
+            border: 1px solid #00ffff;
+            padding: 20px;
+            margin: 0 10px;
+            flex: 1 1 300px;
+            position: relative;
+            min-width: 270px;
+            font-size: 1.2em;
+        }
+        .info-box::before, .info-box::after {
+            content: "";
+            position: absolute;
+            border: 1px solid #00ffff;
+            animation: border-glow 3s infinite alternate;
+        }
+        .info-box::before {
+            top: 0;
+            left: 0;
+            right: 0;
+            height: 1px;
+        }
+        .info-box::after {
+            left: 0;
+            top: 0;
+            bottom: 0;
+            width: 1px;
+        }
+        @keyframes border-glow {
+            0% { opacity: 0.3; }
+            50% { opacity: 1; }
+            100% { opacity: 0.3; }
+        }
+        .info-box p {
+            font-size: 1.1em;
+            line-height: 1.6;
+            color: #00ffff;
+            text-shadow: 0 0 2px #00ffff;
+        }
+        .icon-container {
+            display: flex;
+            align-items: center;
+            justify-content: space-around;
+            flex: 1;
+            margin-top: auto;
+            height: 60px;
+        }
+        .icon {
+            font-size: 1.8em;
+            color: #ff00ff;
+            filter: drop-shadow(0 0 5px #ff00ff);
+        }
+    </style>
+</head>
+<body>
+    <div class="shell-container">
+        <div class="profile-container">
+            <img src="https://via.placeholder.com/150" alt="Foto de Usuario" class="profile-pic">
+            <h1>Bienvenid@</h1>
+            <h2>Usuario de Prueba</h2>
+        </div>
+
+        <div class="info-container">
+            <div class="info-box">
+                <p><strong>ID:</strong> 123456</p>
+                <p><strong>First Name:</strong> Nombre</p>
+                <p><strong>Last Name:</strong> Apellido</p>
+            </div>
+            <div class="info-box">
+                <p><strong>Bio:</strong> Desarrollador de software</p>
+                <p><strong>Restricted:</strong> No</p>
+                <p><strong>Verified:</strong> Sí</p>
+                <p><strong>Premium:</strong> No</p>
+                <p><strong>Hora:</strong> 10:00</p>
+                <p><strong>Fecha:</strong> 2024-10-29</p>
+            </div>
+        </div>
+
+        <div class="icon-container">
+            <span class="icon">🌐</span>
+            <span class="icon">🔍</span>
+        </div>
+    </div>
+</body>
+</html>

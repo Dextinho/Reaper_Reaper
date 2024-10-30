@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bienvenida</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            text-align: center;
+            background-color: #2C3E50;
+            color: #ECF0F1;
+            padding: 20px;
+        }
+        .container {
+            width: 300px;
+            margin: auto;
+            border-radius: 8px;
+            padding: 20px;
+            background-color: #34495E;
+            box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.5);
+        }
+        .profile-photo {
+            width: 100px;
+            height: 100px;
+            border-radius: 50%;
+            border: 3px solid #3498DB;
+        }
+        .username {
+            font-size: 24px;
+            font-weight: bold;
+        }
+        .info {
+            font-size: 14px;
+            margin-top: 10px;
+        }
+        .group-name {
+            font-size: 18px;
+            color: #3498DB;
+            margin-top: 10px;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <img src="{{ user_photo }}" alt="Foto de perfil" class="profile-photo">
+        <div class="username">{{ first_name }} {{ last_name }}</div>
+        <div class="info">
+            ID de Usuario: {{ id }}<br>
+            Usuario: @{{ username }}<br>
+            Biografía: {{ bio }}<br>
+            Verificado: {{ verified }}<br>
+            Premium: {{ premium }}
+        </div>
+        <div class="group-name">
+            Bienvenido a {{ nombre_del_grupo }}
+        </div>
+        <div class="time">
+            Hora actual: {{ hora_GTM }}<br>
+            Fecha: {{ Fecha_GTM }}
+        </div>
+    </div>
+</body>
+</html>
